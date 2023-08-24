@@ -3,7 +3,7 @@ import HomePage from './Pages/HomePage';
 import {Switch, Route} from 'react-router-dom';
 import ProfilePage from "./Pages/ProfilePage";
 import ForgetPasswordPage from './Pages/ForgetPasswordPage';
-
+import ExpenseContextProvider from './Store/ExpenseContextProvider';
 
 const App=()=>{
   return(
@@ -15,9 +15,11 @@ const App=()=>{
   <Route path='/login'>
     <LoginPage />
   </Route>
+  <ExpenseContextProvider>
   <Route path='/home'>
     <HomePage />
   </Route>
+  </ExpenseContextProvider>
 
   <Route path= '/profile'>
   <ProfilePage/>

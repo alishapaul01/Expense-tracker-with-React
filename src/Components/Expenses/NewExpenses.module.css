@@ -1,0 +1,47 @@
+.expense {
+    background-color:rgb(247, 219, 224);
+    padding: 1.25rem;
+    margin: 2rem auto;
+    width: 50rem;
+    max-width: 100%;
+    border-radius: 12px;
+    text-align: center;
+    border: 1.5px solid palevioletred;
+  }
+  .expense button {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    cursor: pointer;
+    padding: 1rem;
+    border: 3px solid palevioletred;
+    background-color: white;
+    color:black;
+    font-weight:bold;
+    border-radius: 10px;
+    margin: 0.5rem auto;
+    font-size: large;
+
+  }
+
+
+
+
+  .expense button:hover,
+
+  .expense button:active {
+
+    background-color:lightblue;
+
+  }
+
+
+
+
+  .expense button.alternative {
+
+    color: #220131;
+
+    border-color: transparent;
+
+    background-color: transparent;
+
+  }

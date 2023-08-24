@@ -1,0 +1,10 @@
+
+.description {
+    font-weight: bold;
+    padding: 10px;
+    color:deeppink;
+    justify-content: space-evenly;
+    border: 1px solid black;
+    display: flex;
+
+}
