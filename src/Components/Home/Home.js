@@ -1,11 +1,12 @@
-// import { NavLink } from "react-bootstrap";
 import { useContext } from 'react';
 import classes from './Home.module.css'
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import AuthContext from '../../Store/auth-context';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom';
 
 const Home=()=>{
     const authCtx= useContext(AuthContext);
+    const history= useHistory();
     const verifyEmailHandler = (e) => {
         
         e.preventDefault();
@@ -29,6 +30,11 @@ const Home=()=>{
             }
         })
     }
+    const logoutHandler=()=>{
+        authCtx.logout();
+        history.replace('/login');
+
+    }
     return (
         <div className={classes.home}>
         <h2>Welcome to Expense Tracker !</h2>
@@ -36,7 +42,9 @@ const Home=()=>{
             <Link to='/profile'>Complete Now</Link>
         </p>
         <div className={classes.action}><button onClick={verifyEmailHandler}>Verify Your Email</button></div> 
+        <div className={classes.logout}><button onClick={logoutHandler}>Logout</button></div>
         </div>
+       
     )
     
 }

@@ -25,3 +25,21 @@ width: max-content;
     border-radius: 20px;
     font-weight: bold;
 }
+
+.logout button{
+    cursor:pointer;
+    margin: 1rem;
+    color: black;
+    background-color:transparent;
+    padding: 0.5rem;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-weight: bold;
+}
+.logout button:hover{
+    background-color: palevioletred;
+    border: 2px solid deeppink;
+}
+.action button:hover{
+    background-color: cadetblue;
+}

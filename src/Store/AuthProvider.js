@@ -15,12 +15,18 @@ const AuthProvider = props => {
             setEmail(email);
            
         }
-
+        const logoutHandler=()=>{
+            localStorage.removeItem('token');
+            localStorage.removeItem('email');
+            setToken(null);
+            setEmail(null);
+        }
     const cartContext = {
         token: token,
         email: email,  
         login: loginHandler,
         isLoggedIn: userIsLoggedIn,
+        logout: logoutHandler
     }
 
     return (
