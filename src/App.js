@@ -2,6 +2,7 @@ import LoginPage from "./Pages/LoginPage";
 import HomePage from './Pages/HomePage';
 import {Switch, Route} from 'react-router-dom';
 import ProfilePage from "./Pages/ProfilePage";
+import ForgetPasswordPage from './Pages/ForgetPasswordPage';
 
 
 const App=()=>{
@@ -20,6 +21,9 @@ const App=()=>{
 
   <Route path= '/profile'>
   <ProfilePage/>
+  </Route>
+  <Route path= '/forgot'>
+  <ForgetPasswordPage/>
   </Route>
   </Switch>
   </>

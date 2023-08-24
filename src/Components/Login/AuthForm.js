@@ -12,6 +12,10 @@ const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   const authCtx= useContext(AuthContext);
+  const passwordResetHandler=()=>{
+    history.push('/forgot');
+  }
+  
 
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
@@ -68,7 +72,7 @@ const AuthForm = () => {
       })
     }
   }
-
+ 
   return (
     <section className={classes.auth}>
       <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
@@ -100,7 +104,9 @@ const AuthForm = () => {
                 required
               />
         </div>
-
+        <div className={classes.forgot}>
+          <p onClick={passwordResetHandler}>{isLogin ? 'Forget Password?' : ''}</p>
+          </div>
         <div className={classes.actions}>
           <button>{isLogin ? 'Login' : 'Create Account'}</button>
           <button className={classes.toggle} onClick={switchAuthModeHandler}
@@ -108,7 +114,6 @@ const AuthForm = () => {
             {isLogin ? 'Create new account' : 'Login with existing account'}
           </button>
         </div>
-        <p>{isLogin ? 'Forget Password' : ''}</p>
       </form>
     </section>
   );
