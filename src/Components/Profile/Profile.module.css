@@ -6,10 +6,9 @@
 .profile h3{
   margin-left: 1rem;
 }
-.profile p{
-  margin-right: 1rem;
+p{
+  margin: 2rem auto;
   font-style: italic;
-  color:blueviolet;
   font-weight: bold;
 }
 

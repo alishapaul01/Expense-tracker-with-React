@@ -22,14 +22,16 @@ const Profile = () => {
       }).then(res => {
         if(res.ok){
           res.json().then(data => {
-            console.log(data.users.email);
-            setPercent(100)
+            console.log(data.users)
+            if(data.users.some(el => el.hasOwnProperty('displayName'))){
+              setPercent(100)
+            }
             nameInputRef.current.value = data.users.map(item => item.displayName)
             photoURLRef.current.value = data.users.map(item => item.photoUrl)
           })
         }
       })
-    })
+    }, [nameInputRef, photoURLRef , authCtx.token])
     const submitHandler = (e) => {
         e.preventDefault();
         const enteredName = nameInputRef.current.value;

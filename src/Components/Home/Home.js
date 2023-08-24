@@ -1,14 +1,41 @@
 // import { NavLink } from "react-bootstrap";
+import { useContext } from 'react';
 import classes from './Home.module.css'
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import AuthContext from '../../Store/auth-context';
 
 const Home=()=>{
+    const authCtx= useContext(AuthContext);
+    const verifyEmailHandler = (e) => {
+        
+        e.preventDefault();
+        fetch('https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyBNOz1MYeGBYHHahcUQZuKj7rteQi0uYbM',{
+            method:'POST',
+            body :JSON.stringify({
+                requestType:"VERIFY_EMAIL",
+                idToken:authCtx.token
+
+            }),
+            headers:{
+                'Content-Type':'application/json'
+            }
+        }).then(res => {
+            if(res.ok){
+                console.log(res)
+            } else {
+                res.json().then(data => {
+                    alert(data.error.message)
+                })
+            }
+        })
+    }
     return (
         <div className={classes.home}>
         <h2>Welcome to Expense Tracker !</h2>
         <p>Your profile is incomplete.
             <Link to='/profile'>Complete Now</Link>
-            </p>
+        </p>
+        <div className={classes.action}><button onClick={verifyEmailHandler}>Verify Your Email</button></div> 
         </div>
     )
     
