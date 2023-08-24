@@ -1,15 +1,25 @@
-import Login from "./Pages/LoginPage";
-import Home from './Pages/HomePage';
+import LoginPage from "./Pages/LoginPage";
+import HomePage from './Pages/HomePage';
 import {Switch, Route} from 'react-router-dom';
+import ProfilePage from "./Pages/ProfilePage";
+
+
 const App=()=>{
   return(
     <>
   <Switch>
   <Route path='/' exact>
-    <Login />
+    <LoginPage />
+  </Route>
+  <Route path='/login'>
+    <LoginPage />
   </Route>
   <Route path='/home'>
-    <Home />
+    <HomePage />
+  </Route>
+
+  <Route path= '/profile'>
+  <ProfilePage/>
   </Route>
   </Switch>
   </>

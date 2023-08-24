@@ -1,5 +1,6 @@
-const Home=()=>{
-    return <h2>Welcome to Expense Tracker!</h2>
-}
+import Home from "../Components/Home/Home";
 
-export default Home;
+const HomePage=()=>{
+    return <Home/>
+}
+export default HomePage;

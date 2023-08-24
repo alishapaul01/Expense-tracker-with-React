@@ -1,6 +1,7 @@
-import { useState, useRef} from 'react';
+import { useState, useRef, useContext} from 'react';
 import classes from './AuthForm.module.css'
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
+import AuthContext from '../../Store/auth-context'
 
 
 const AuthForm = () => {
@@ -9,6 +10,8 @@ const AuthForm = () => {
   const confirmPasswordInputRef = useRef();
   const history= useHistory();
   const [isLogin, setIsLogin] = useState(true);
+
+  const authCtx= useContext(AuthContext);
 
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
@@ -55,7 +58,7 @@ const AuthForm = () => {
       }
   })
       .then((data) => {
-          console.log(data.idToken, enteredEmail);
+          authCtx.login(data.idToken, enteredEmail);
           history.replace('/home');
 
 
@@ -97,6 +100,7 @@ const AuthForm = () => {
                 required
               />
         </div>
+
         <div className={classes.actions}>
           <button>{isLogin ? 'Login' : 'Create Account'}</button>
           <button className={classes.toggle} onClick={switchAuthModeHandler}
@@ -104,6 +108,7 @@ const AuthForm = () => {
             {isLogin ? 'Create new account' : 'Login with existing account'}
           </button>
         </div>
+        <p>{isLogin ? 'Forget Password' : ''}</p>
       </form>
     </section>
   );
