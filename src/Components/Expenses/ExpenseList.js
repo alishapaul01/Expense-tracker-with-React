@@ -4,14 +4,13 @@ import Card from '../UI/Card';
 
 
 const ExpenseList = props => {
-    let data = props.items;
+    let data = Object.values(props.items);
+    console.log(data);
     return(
     <Card className={classes.list}>
-        <ul  >
+        <ul>
             {data.map((key) => (
-
-                <ExpenseItem key={key.id} title={key.title}
-                amount={key.amount} des={key.des} />
+            <ExpenseItem key={key.id} id={key.id} title={key.title} amount={key.amount} category={key.category} />
             ))}
         </ul>
         </Card>

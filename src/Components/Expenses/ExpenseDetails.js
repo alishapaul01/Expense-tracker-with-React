@@ -6,7 +6,7 @@ const ExpenseDetails = (props) => {
     <Fragment>
     <div className={classes.description}>
         <span>Description: {props.title}</span>
-        <span>Category: {props.des}</span> 
+        <span>Category: {props.category}</span> 
         <span>Price: Rs {props.amount}</span></div>
     </Fragment>
     )

@@ -2,34 +2,34 @@ import classes from './ExpenseForm.module.css';
 import { useState } from 'react';
 
 const ExpenseForm = (props) => {
-    const [enteredTitle, setEnteredTitle] = useState('');
+    const [enteredDescription, setEnteredDescription] = useState('');
     const[enteredAmount, setEnteredAmount] = useState('');
-    const[enteredDes, setEnteredDes] = useState('');
+    const[enteredCategory, setEnteredCategory] = useState('');
 
-    const updateTitle = (e) =>{
-        setEnteredTitle(e.target.value);
+    const updateDescription = (e) =>{
+        setEnteredDescription(e.target.value);
     }
 
     const updateAmount = (e) =>{
         setEnteredAmount(e.target.value);
 
     }
-    const updateDes = (e) => {
-        setEnteredDes(e.target.value);
+    const updateCategory = (e) => {
+        setEnteredCategory(e.target.value);
     }
     const addExpense = (e) => {
         e.preventDefault();
 
         const expenseDetails = {
-            title: enteredTitle,
+            title: enteredDescription,
             amount: enteredAmount,
-            des:enteredDes
+            category:enteredCategory
         }
         console.log(expenseDetails)
         props.onSaveExpenseData(expenseDetails);
-        setEnteredTitle('');
+        setEnteredDescription('');
         setEnteredAmount('');
-        setEnteredDes('');
+        setEnteredCategory('');
         props.onCancel();
     }
     const cancelForm = (e) => {
@@ -41,8 +41,8 @@ const ExpenseForm = (props) => {
         <form onSubmit={addExpense}>
        <div className={classes.controls}>
            <div className={classes.control}>
-               <label>Expense Title</label><br />
-               <input type="text" id="title" value={enteredTitle} onChange={updateTitle}/>
+               <label>Expense Description</label><br />
+               <input type="text" id="title" value={enteredDescription} onChange={updateDescription}/>
            </div>
            <div className={classes.control}>
                <label>Expense Amount</label><br />
@@ -50,14 +50,15 @@ const ExpenseForm = (props) => {
            </div>
            <div className={classes.control}>
                <label>Expense Category</label><br />
-               <select id="category" name="category" value={enteredDes} onChange={updateDes}>
+               <select id="category" name="category" value={enteredCategory} onChange={updateCategory}>
                <option value="Select a Category" defaultValue >Select a Category</option>
-             <option value="Fuel">Fuel</option>
-             <option value="Food">Food</option>
-             <option value="Electricity">Electricity</option>
-             <option value="Movies">Movies</option>
-             <option value="Fees">Fees</option>
-             <option value="Shopping">Shopping</option>
+               <option value="Fuel">Fuel</option>
+               <option value="Food">Food</option>
+               <option value="Electricity">Electricity</option>
+               <option value="Movies">Movies</option>
+               <option value="Fees">Fees</option>
+               <option value="Shopping">Shopping</option>
+               <option value="Furniture">Furniture</option>
            </select>
            </div>
 
