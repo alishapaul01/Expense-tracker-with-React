@@ -37,11 +37,45 @@ const ExpenseContextProvider = props => {
         fetchData();
     },[fetchData])
 
+    const deleteExpenseHandler = (id) => {
+        const key = Object.keys(expense).find(key => expense[key].id === id)
+         fetch(`https://expense-tracker-5d0ea-default-rtdb.firebaseio.com/expenses/${key}.json`,{
+             method:'DELETE'
+         })
+         .then(res => {
+             if(res.ok) {
+                 console.log("expenses deleted successfully")
+                 window.location.reload()
+             }
+         })
+ 
+ 
+     }
+     const editExpenseHandler =(item) => {
+
+        const key = Object.keys(expense).find(key => expense[key].id === item.id)
+        console.log(item)
+        fetch(`https://expense-tracker-5d0ea-default-rtdb.firebaseio.com/expenses/${key}.json`,{
+            method:'PUT',
+            body:JSON.stringify(item),
+            headers:{
+                'Content-Type':'application/json'
+            }
+        })
+        .then(res => {
+            if(res.ok) {
+                console.log("expenses edited successfully");
+                window.location.reload()
+            }
+        })
+    }
 
 
     const expenseContext = {
         expense:expense,
-        addExpenses:addExpenseHandler
+        addExpenses:addExpenseHandler,
+        deleteExpenses: deleteExpenseHandler,
+        editExpenses: editExpenseHandler
             
     }
     console.log(expense)

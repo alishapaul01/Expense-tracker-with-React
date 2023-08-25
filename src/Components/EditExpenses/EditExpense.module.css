@@ -1,0 +1,42 @@
+.control label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  .control input {
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid purple;
+    width: 20rem;
+    max-width: 100%;
+
+  }
+  .control select {
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid purple;
+    width: 20rem;
+    max-width: 100%;
+
+  }
+  .expense {
+    background-color:lightgrey;
+    padding: 1rem;
+    margin: 2rem auto;
+    width: 50rem;
+    max-width: 95%;
+    border-radius: 12px;
+    text-align: center;
+  }
+  .actions {
+    text-align: right;
+  }
+  .actions button{
+    width: max-content;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid purple;
+  }
