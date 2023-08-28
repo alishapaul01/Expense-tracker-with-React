@@ -1,12 +1,12 @@
-import { Fragment, useContext, useRef, useCallback, useState, useEffect } from 'react';
+import { Fragment, useRef, useCallback, useState, useEffect } from 'react';
 import classes from './Profile.module.css';
-import AuthContext from '../../Store/auth-context';
+
 
 const Profile = () => {
 
-    const authCtx = useContext(AuthContext);
     const nameInputRef = useRef();
     const photoURLRef = useRef();
+    const token = localStorage.getItem("token")
     const [percent,setPercent] = useState(64);
 
     
@@ -14,7 +14,7 @@ const Profile = () => {
       fetch('https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyBNOz1MYeGBYHHahcUQZuKj7rteQi0uYbM', {
         method: 'POST',
         body:JSON.stringify({
-          idToken:authCtx.token
+          idToken:token
         }),
         headers: {
           'Content-Type': 'application/json'
@@ -31,7 +31,7 @@ const Profile = () => {
           })
         }
       })
-    }, [nameInputRef, photoURLRef , authCtx.token])
+    }, [nameInputRef, photoURLRef ,token])
     const submitHandler = (e) => {
         e.preventDefault();
         const enteredName = nameInputRef.current.value;
@@ -39,7 +39,7 @@ const Profile = () => {
         fetch('https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyBNOz1MYeGBYHHahcUQZuKj7rteQi0uYbM', {
             method:'POST',
             body:JSON.stringify({
-                idToken:authCtx.token,
+                idToken:token,
                 displayName:enteredName,
                 photoUrl:enteredPhotoURL,
                 returnSecureToken:true,

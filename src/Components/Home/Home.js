@@ -1,12 +1,17 @@
-import { useContext } from 'react';
+
 import classes from './Home.module.css'
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import AuthContext from '../../Store/auth-context';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom';
 
-const Home=()=>{
-    const authCtx= useContext(AuthContext);
-    const history= useHistory();
+import { useHistory } from 'react-router-dom/cjs/react-router-dom';
+import {authActions} from '../../Store/AuthReducer';
+import {useDispatch, useSelector} from 'react-redux'
+
+
+
+const Home = () => {
+    const history = useHistory();
+    const dispatch = useDispatch();
+    const token = useSelector(state => state.auth.tokenId);
     const verifyEmailHandler = (e) => {
         
         e.preventDefault();
@@ -14,7 +19,7 @@ const Home=()=>{
             method:'POST',
             body :JSON.stringify({
                 requestType:"VERIFY_EMAIL",
-                idToken:authCtx.token
+                idToken:token
 
             }),
             headers:{
@@ -31,7 +36,7 @@ const Home=()=>{
         })
     }
     const logoutHandler=()=>{
-        authCtx.logout();
+        dispatch(authActions.logout());
         history.replace('/login');
 
     }

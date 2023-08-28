@@ -1,17 +1,18 @@
-import { useState, useRef, useContext} from 'react';
+import { useState, useRef} from 'react';
 import classes from './AuthForm.module.css'
 import { useHistory } from 'react-router-dom';
-import AuthContext from '../../Store/auth-context'
+import { authActions } from '../../Store/AuthReducer';
+import { useDispatch} from 'react-redux'
 
 
 const AuthForm = () => {
+  const dispatch = useDispatch();
   const emailInputRef= useRef('');
   const passwordInputRef= useRef('');
   const confirmPasswordInputRef = useRef();
   const history= useHistory();
   const [isLogin, setIsLogin] = useState(true);
 
-  const authCtx= useContext(AuthContext);
   const passwordResetHandler=()=>{
     history.push('/forgot');
   }
@@ -62,7 +63,7 @@ const AuthForm = () => {
       }
   })
       .then((data) => {
-          authCtx.login(data.idToken, enteredEmail);
+          dispatch(authActions.login(data));
           history.replace('/home');
 
 

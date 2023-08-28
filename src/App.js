@@ -3,14 +3,12 @@ import HomePage from './Pages/HomePage';
 import {Switch, Route} from 'react-router-dom';
 import ProfilePage from "./Pages/ProfilePage";
 import ForgetPasswordPage from './Pages/ForgetPasswordPage';
-import ExpenseContextProvider from './Store/ExpenseContextProvider';
 import EditPage from './Pages/EditPage'
 
 const App=()=>{
   return(
     <>
   <Switch>
-  <ExpenseContextProvider>
   <Route path='/' exact>
     <LoginPage />
   </Route>
@@ -29,7 +27,6 @@ const App=()=>{
   <Route path='/edit'>
     <EditPage/>
   </Route>
-  </ExpenseContextProvider>
   </Switch>
   </>
   )
