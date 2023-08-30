@@ -11,7 +11,7 @@ import {useDispatch, useSelector} from 'react-redux'
 const Home = () => {
     const history = useHistory();
     const dispatch = useDispatch();
-    const token = useSelector(state => state.auth.tokenId);
+    const token = useSelector(state => state.auth.token);
     const verifyEmailHandler = (e) => {
         
         e.preventDefault();

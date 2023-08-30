@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 const ExpenseForm = (props) => {
     const [enteredDescription, setEnteredDescription] = useState('');
-    const[enteredAmount, setEnteredAmount] = useState('');
+    const[enteredAmount, setEnteredAmount] = useState();
     const[enteredCategory, setEnteredCategory] = useState('');
 
     const updateDescription = (e) =>{

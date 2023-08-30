@@ -19,17 +19,16 @@ const ExpenseDetails = (props) => {
   
    <Fragment>
         <div className={classes.description}>
-       <span>{props.title}</span>
+            <span>{props.title}</span>
             <span>{props.category}</span> 
-            <span>Rs {props.amount}</span>
-       
+            <span>Rs {Number(props.amount)}</span>
         </div>
         <div className={classes.action}>
             <button onClick={removeExpenses.bind(null,props.id)}>Delete</button>
-           <button onClick={redirectToEdit}>Edit</button>
-          {isShown && <EditExpense items={props} />}
+            <button onClick={redirectToEdit}>Edit</button>
+            {isShown && <EditExpense items={props} />}
             </div> 
-            </Fragment>
+        </Fragment>
       
     )
 };

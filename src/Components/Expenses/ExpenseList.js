@@ -11,9 +11,9 @@ const ExpenseList = props => {
         <span className={classes.h1}>Description</span>
         <span className={classes.h2}>Category </span>
         <span className={classes.h3}>Price </span>
-            {data.map((key) => (
-            <ExpenseItem key={key.id} id={key.id} title={key.title} amount={key.amount} category={key.category}/>
-            ))}
+        {data.map((key) => (
+        <ExpenseItem key={key.id} id={key.id} title={key.title} amount={Number(key.amount)} category={key.category}/>
+        ))}
         </ul>
         </Card>
     )
