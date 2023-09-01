@@ -40,7 +40,8 @@ const Home = () => {
         history.replace('/login');
 
     }
-    return (
+    return (<>
+        
         <div className={classes.home}>
         <h2>Welcome to Expense Tracker !</h2>
         <p>Your profile is incomplete.
@@ -49,6 +50,7 @@ const Home = () => {
         <div className={classes.action}><button onClick={verifyEmailHandler}>Verify Your Email</button></div> 
         <div className={classes.logout}><button onClick={logoutHandler}>Logout</button></div>
         </div>
+        </>
         
        
     )

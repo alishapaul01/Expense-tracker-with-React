@@ -5,11 +5,30 @@ import ProfilePage from "./Pages/ProfilePage";
 import ForgetPasswordPage from './Pages/ForgetPasswordPage';
 import EditPage from './Pages/EditPage'
 import { useEffect } from "react";
-import { useSelector} from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
+import {fetchExpenseData, sendExpenseItems} from './Store/expense-actions'
 
+let isInitial= true;
 const App=()=>{
+
   const isDarkMode = useSelector(state => state.theme.isClicked)
   const isLogin = useSelector(state => state.auth.isLoggedIn)
+  const expense = useSelector(state => state.expense)
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchExpenseData())
+  },[dispatch])
+
+  useEffect(() => {
+    if(isInitial) {
+      isInitial = false;
+      return;
+    }
+    if(expense.changed) {
+      dispatch(sendExpenseItems(expense));
+    }
+  }, [expense,dispatch])
 
    useEffect(() => {
     if(isLogin) {
@@ -17,9 +36,9 @@ const App=()=>{
     } else {
       document.body.style.backgroundColor =  "#fff";
     }
-  }, [isDarkMode]);
+  }, [isDarkMode , isLogin]);
   return(
-    <>
+  <>
   <Switch>
   <Route path='/' exact>
     <LoginPage />
@@ -28,6 +47,7 @@ const App=()=>{
     <LoginPage />
   </Route>
   <Route path='/home'>
+  
     <HomePage />
   </Route>
   <Route path= '/profile'>

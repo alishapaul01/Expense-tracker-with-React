@@ -29,6 +29,7 @@ const EditExpense = props => {
             id:props.items.id
         }
         dispatch(expenseActions.editExpense(updatedExpense))
+        props.onClose();
     }
   return (
 

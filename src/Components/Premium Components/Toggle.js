@@ -9,7 +9,7 @@ const Toggle = () => {
     const themeChanger = () => {
         dispatch(themeActions.toggle())
     }
-
+   // document.body.style.backgroundColor = isChange ? "#292c35" : "#fff";
     return (
         <div className={classes.darkmode}>
         <input type="checkbox" className={classes.checkbox} id="checkbox" onChange={themeChanger} />

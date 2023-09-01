@@ -13,9 +13,9 @@ const Premium = (props) => {
     expense.map(item => {
         return(
         expenseData.push({
-        'Expense Description':item.title,
-        'Expense Catgory':item.category,
-        'Expense Amount':item.amount})
+        'Description':item.title,
+        'Catgory':item.category,
+        'Amount':item.amount})
         )
     })
     const dispatch = useDispatch();
@@ -31,14 +31,14 @@ const Premium = (props) => {
         const excelBuffer = XLSX.write(wb, { bookType: "xlsx", type: "array" });
         const data = new Blob([excelBuffer], { type: fileType });
         FileSaver.saveAs(data, "Expenses" + fileExtension);
-        console.log('download started');
+        console.log('downloaded')
 
     }
     const isClicked = useSelector(state => state.theme.isClicked)
     return (
     <div className={classes.premium}>
        <span><button onClick={buttonHandler}>Activate Premium</button></span> 
-       <span>{(props.amount > 10000 && isClicked )&& <button onClick={handleDownload}>Download File</button> }</span> 
+       <span>{(props.amount > 10000 && isClicked ) && <button onClick={handleDownload}>Download File</button>}</span> 
     </div>
     )
 };
