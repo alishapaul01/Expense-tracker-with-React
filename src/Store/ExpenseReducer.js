@@ -26,7 +26,7 @@ const expenseSlice = createSlice({
         const index =  state.expense.findIndex(item => item.id === action.payload.id)
         state.changed = true;
         state.expense[index].title = action.payload.title;
-        state.expense[index].des = action.payload.des;
+        state.expense[index].category = action.payload.category;
         state.expense[index].amount = action.payload.amount;
 
     }
