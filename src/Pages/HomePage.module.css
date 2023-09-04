@@ -2,7 +2,12 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     padding: 1rem;
-    border: 1px solid palevioletred;
+    border: 3px solid palevioletred;
     margin-bottom: 0px;
     text-align: center;
+    max-width: 200px;
+    margin-left: 40rem;
+}
+.total:hover{
+    border-color: cornflowerblue;
 }

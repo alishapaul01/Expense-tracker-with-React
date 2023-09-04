@@ -1,6 +1,6 @@
 import LoginPage from "./Pages/LoginPage";
 import HomePage from './Pages/HomePage';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route , Redirect} from 'react-router-dom';
 import ProfilePage from "./Pages/ProfilePage";
 import ForgetPasswordPage from './Pages/ForgetPasswordPage';
 import EditPage from './Pages/EditPage'
@@ -47,17 +47,19 @@ const App=()=>{
     <LoginPage />
   </Route>
   <Route path='/home'>
-  
-    <HomePage />
+  {isLogin &&  <HomePage />}
+  {!isLogin && <Redirect to='/' />}
   </Route>
   <Route path= '/profile'>
-  <ProfilePage/>
+  {isLogin && <ProfilePage /> }
+  {!isLogin && <Redirect to='/' />}
   </Route>
   <Route path= '/forgot'>
   <ForgetPasswordPage/>
   </Route>
   <Route path='/edit'>
-    <EditPage/>
+  {isLogin && <EditPage /> }
+  {!isLogin && <Redirect to='/' />}
   </Route>
   </Switch>
   </>

@@ -64,16 +64,13 @@ const AuthForm = () => {
   })
       .then((data) => {
           dispatch(authActions.login(data));
-          history.replace('/home');
-
-
-      })
+          window.location.href = '/home';
+        })
       .catch((err) => {
           alert(err.message);
       })
     }
   }
- 
   return (
     <section className={classes.auth}>
       <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
