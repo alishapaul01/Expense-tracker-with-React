@@ -7,4 +7,32 @@ describe('ForgetPass',()=> {
        expect(linkedElement).toBeInTheDocument();
 
     })
+
+    test('renders forget page if requests succeeds', async()=>{
+        window.fetch= jest.fn();
+        window.fetch.mockResolvedValueOnce({
+            json: async()=>[{ email: 'abcd@gmail.com'}]
+        })
+        render(<ForgetPassword/>)
+    })
+
+    test('renders email input if requests succeeds', async()=>{
+        window.fetch= jest.fn();
+        window.fetch.mockResolvedValueOnce({
+            json: async()=>[{ email: 'abcd@gmail.com'}]
+        })
+        render(<ForgetPassword/>)
+        const labelElement = screen.getByLabelText('Email',{selector: 'input'});
+        expect(labelElement).toBeInTheDocument();
+    })
+
+    test('renders button if requests succeeds', async()=>{
+        window.fetch= jest.fn();
+        window.fetch.mockResolvedValueOnce({
+            json: async()=>[{ email: 'abcd@gmail.com'}]
+        })
+        render(<ForgetPassword/>)
+        const buttonElement = screen.getByRole('button');
+        expect(buttonElement).toBeInTheDocument();
+    })
 })

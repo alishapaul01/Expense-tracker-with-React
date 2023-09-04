@@ -20,13 +20,13 @@ describe('Expense Form Component',()=> {
                 expect(linkElement).toBeInTheDocument();
             
             })
-        test('renders expense amount input', () => {
+        test('renders Cancel input', () => {
             render(<ExpenseForm/>)
                     const buttonELement = screen.getByRole('button',{name:'Cancel'});
                     expect(buttonELement).toBeInTheDocument();
                 
             })
-        test('renders expense amount input', () => {
+        test('renders  Add Expense button', () => {
             render(<ExpenseForm/>)
                     const buttonELement = screen.getByRole('button',{name:'Add Expense'});
                     expect(buttonELement).toBeInTheDocument();
