@@ -22,9 +22,9 @@ const ExpenseDetails = (props) => {
   
    <Fragment>
         <div className={classes.description}>
-            <span>{props.title}</span>
-            <span>{props.category}</span> 
-            <span>Rs {Number(props.amount)}</span>
+            <h5>Description :<br/><br/>{props.title}</h5><hr/>
+            <h5>Category :<br/><br/>{props.category}</h5><hr/>
+            <h5>Price :<br/><br/>Rs {Number(props.amount)}</h5>
         </div>
         <div className={classes.action}>
             <button onClick={removeExpenses.bind(null,props.id)}>Delete</button>

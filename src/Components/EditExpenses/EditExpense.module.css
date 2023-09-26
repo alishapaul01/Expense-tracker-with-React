@@ -27,16 +27,26 @@
     padding: 1rem;
     margin: 2rem auto;
     width: 50rem;
-    max-width: 95%;
     border-radius: 12px;
     text-align: center;
   }
   .actions {
-    text-align: right;
-  }
-  .actions button{
+    text-align: center;
+    margin: 1rem;
     width: max-content;
-    height: 40px;
-    border-radius: 10px;
-    border: 1px solid purple;
+  }
+
+  @media screen and (max-width:740px){
+    .expense{
+      padding: 1rem;
+      margin:  auto;
+      margin-top: 1rem;
+      width:80%
+    }
+    .control input{
+      width: 80%
+    }
+    .control select{
+      width: 87%
+    }
   }

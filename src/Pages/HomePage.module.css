@@ -14,7 +14,7 @@
 
 @media screen and (max-width: 620px){
     .total{
-        margin: auto;
+        margin: 1rem auto;
         margin-bottom: 1rem;
     }
     

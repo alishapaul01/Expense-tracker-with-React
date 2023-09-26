@@ -13,38 +13,31 @@ background-color: transparent;
 margin-right: 20px;
 border: 2px solid black;
 border-radius: 8px;
-width: 50%;
+width: 55%;
+height: max-content;
 }
 
 .action button{
     cursor:pointer;
-    margin: 1rem auto;
+    margin: 1rem;
+    margin-left: 1rem;
     color: black;
     background-color: transparent;
-    padding: 1.2rem;
-    border: 3px solid teal;
-    border-radius: 20px;
-    font-weight: bold;
-}
-
-.logout button{
-    cursor:pointer;
-    margin: 1rem;
-    color: black;
-    background-color:transparent;
-    padding: 0.5rem;
-    border: 2px solid black;
+    padding: 1rem;
+    border: 3px solid deepskyblue;
     border-radius: 15px;
     font-weight: bold;
 }
-.logout button:hover{
-    background-color: palevioletred;
-    border: 2px solid deeppink;
-}
 .action button:hover{
-    background-color: cadetblue;
+    background-color:skyblue
 }
 
-@media screen and(max-width:740px) {
-    
+@media screen and (max-width:620px){
+    .action button{
+        width: 70%;
+    }
+    .home p{
+        height: 12vh;
+        margin: 2rem auto;
+    }
 }

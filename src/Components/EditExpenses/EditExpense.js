@@ -66,7 +66,7 @@ const EditExpense = props => {
             </div>
 
         <div className={classes.actions}>
-            <button type="submit">Edit Expense</button>
+            <button type="submit">Edit</button>
             </div>
         </form>
         </div> 
