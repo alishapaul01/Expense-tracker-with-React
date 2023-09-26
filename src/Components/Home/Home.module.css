@@ -1,26 +1,27 @@
 
-.home {
+.home{
     display: flex;
     border-bottom: 1px solid black;
     justify-content: space-between;
+    padding: 0.5rem;
 }
 .home p{
-text-align:right;
+text-align:center;
 font-style: italic;
 color:black;
 background-color: transparent;
 margin-right: 20px;
 border: 2px solid black;
 border-radius: 8px;
-width: max-content;
-
+width: 50%;
 }
+
 .action button{
     cursor:pointer;
-    margin: 1rem;
+    margin: 1rem auto;
     color: black;
     background-color: transparent;
-    padding: 1rem;
+    padding: 1.2rem;
     border: 3px solid teal;
     border-radius: 20px;
     font-weight: bold;
@@ -42,4 +43,8 @@ width: max-content;
 }
 .action button:hover{
     background-color: cadetblue;
+}
+
+@media screen and(max-width:740px) {
+    
 }
