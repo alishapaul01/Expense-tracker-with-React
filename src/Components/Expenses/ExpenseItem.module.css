@@ -1,18 +1,15 @@
-
 .description {
     font-weight: bold;
-    padding: 10px;
+    padding: 1rem;
     color:deeppink;
     justify-content: space-around;
     border: 1px solid black;
     display: flex;
     border-radius: 12px;
     font-family:inherit;
-
-
 }
 .action button{
-    width: 50px;
+    width: 60px;
     margin-right: 1rem;
     font-weight: bold;
     border: 1.5px solid purple;
@@ -22,4 +19,13 @@
 }
 .action button:hover{
     background-color: plum;
+}
+
+@media screen and (max-width:740px){
+    .description{
+        margin: 0.2rem auto;
+    }
+    .action button{
+        margin-right: 1rem auto;
+    }
 }

@@ -1,22 +1,16 @@
 .list {
     margin: 2rem auto;
     width: 100%;
-    max-width: 50rem;
+    max-width: max-content
 }
   .list ul {
     list-style: none;
     padding: 1rem;
   }
-
   .list li {
-    border: 1px solid pink;
+    border: 1px solid rgb(226, 55, 83);
     margin: 0.5rem 0;
     padding: 0.5rem;
-
-  }
-  .fallback {
-    color: white;
-    text-align: center;
   }
   .h1{
     margin: 5rem;
@@ -34,4 +28,16 @@
   font-weight: bold;
   margin: 6.6rem;
   text-decoration: underline;
+  }
+
+  @media screen and (max-width:740px){
+    .h1{
+      margin: 3rem;
+    }
+    .h2{
+      margin:2rem;
+    }
+    .h3{
+      margin-left: 3rem;
+    }
   }

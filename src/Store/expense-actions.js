@@ -5,7 +5,7 @@ const email = localStorage.getItem("email")
 export const fetchExpenseData = () => {
     return async(dispatch) => {
         const fetchData = async() => {
-            const response = await fetch(`https://expense-tracker-5d0ea-default-rtdb.firebaseio.com/expenses${email}.json`);
+            const response = await fetch(`https://expense-tracker-20594-default-rtdb.asia-southeast1.firebasedatabase.app/expenses${email}.json`);
             if(!response.ok) {
                 throw new Error('Could not fetch data')
             };
@@ -31,7 +31,7 @@ export const sendExpenseItems = (expense) => {
 
     return async() => {
 
-            const response = await fetch(`https://expense-tracker-5d0ea-default-rtdb.firebaseio.com/expenses${email}.json`,{
+            const response = await fetch(`https://expense-tracker-20594-default-rtdb.asia-southeast1.firebasedatabase.app/expenses${email}.json`,{
                 method: 'PUT',
                 body:JSON.stringify({
                     expense:expense.expense,

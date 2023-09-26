@@ -36,10 +36,10 @@ const AuthForm = () => {
   else{
     
     if(isLogin){
-        url='https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBNOz1MYeGBYHHahcUQZuKj7rteQi0uYbM'
+        url='https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyA1DoSkwEFCkOgd8XgtDAMfGNdeXCwfFeI'
     }
     else{
-        url='https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBNOz1MYeGBYHHahcUQZuKj7rteQi0uYbM'
+        url='https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyA1DoSkwEFCkOgd8XgtDAMfGNdeXCwfFeI'
     }
 
     await fetch(url, {

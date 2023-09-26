@@ -36,7 +36,7 @@ const Profile = () => {
         e.preventDefault();
         const enteredName = nameInputRef.current.value;
         const enteredPhotoURL = photoURLRef.current.value;
-        fetch('https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyBNOz1MYeGBYHHahcUQZuKj7rteQi0uYbM', {
+        fetch('https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyA1DoSkwEFCkOgd8XgtDAMfGNdeXCwfFeI', {
             method:'POST',
             body:JSON.stringify({
                 idToken:token,
@@ -59,7 +59,6 @@ const Profile = () => {
         })
 
     }
-    
     useEffect(() => {
       getData();
     }, [getData])
@@ -67,7 +66,7 @@ const Profile = () => {
         <Fragment>
         <div className={classes.profile}>
         <h3>Complete Your Profile</h3>
-        {percent === 100 ? <p>Your Profile is {percent}% completed</p> : <p>Your Profile is {percent}% completed. Complete now</p>} 
+        {percent === 100 ? <p>Your Profile is {percent}% completed</p> : <p>Your Profile is {percent}% completed. Complete now!</p>} 
         </div>
 
         <section className={classes.form}>
@@ -91,7 +90,6 @@ const Profile = () => {
 
                 <div className={classes.actions}>
                  <button type='submit'>Update</button> 
-
                 </div>
               </form>
             </section>

@@ -15,7 +15,7 @@ const Home = () => {
     const verifyEmailHandler = (e) => {
         
         e.preventDefault();
-        fetch('https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyBNOz1MYeGBYHHahcUQZuKj7rteQi0uYbM',{
+        fetch('https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyA1DoSkwEFCkOgd8XgtDAMfGNdeXCwfFeI',{
             method:'POST',
             body :JSON.stringify({
                 requestType:"VERIFY_EMAIL",

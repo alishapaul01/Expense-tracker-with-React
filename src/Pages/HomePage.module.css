@@ -11,3 +11,11 @@
 .total:hover{
     border-color: cornflowerblue;
 }
+
+@media screen and (max-width: 620px){
+    .total{
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+    
+}

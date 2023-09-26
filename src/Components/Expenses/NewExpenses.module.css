@@ -19,29 +19,23 @@
     border-radius: 10px;
     margin: 0.5rem auto;
     font-size: large;
+    margin-right: 1rem;
 
   }
-
-
-
-
   .expense button:hover,
-
   .expense button:active {
-
     background-color:lightblue;
-
   }
 
-
-
-
-  .expense button.alternative {
-
-    color: #220131;
-
-    border-color: transparent;
-
-    background-color: transparent;
-
+  @media  screen and (max-width:740px) {
+    .expense{
+      max-width: 80%;
+      padding: 1rem;
+    }
+    .expense button{
+      margin: auto;
+      margin-right: 1rem;
+      gap: 1rem;
+    }
+    
   }
